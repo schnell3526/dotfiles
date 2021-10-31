@@ -20,6 +20,25 @@ autoload -Uz _zinit
 #     zinit-zsh/z-a-bin-gem-node
 ### End of Zinit's installer chunk
 
+# 補完
+zinit ice wait'!0'; zinit load zsh-users/zsh-completions
+autoload -Uz compinit && compinit
+# タブ補完時に大文字小文字を区別しない
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+# 補完候補を一覧表示したとき、Tabや矢印で選択できるようにする
+zstyle ':completion:*:default' menu select=1
+# シンタックスハイライト
+zinit ice wait'!0'; zinit load zsh-users/zsh-syntax-highlighting
+# 日本語ファイル名を表示可能にする
+setopt print_eight_bit
+
+# ヒストリの設定
+HISTFILE=~/.zsh_history
+HISTSIZE=1000
+SAVEHIST=100000
+setopt hist_ignore_dups
+
+
 # ローカル設定ファイル
 if [ -f ~/dotfiles/zsh/private.zsh ];then
     source ~/dotfiles/zsh/private.zsh

@@ -7,7 +7,7 @@ zinit load momo-lab/zsh-abbrev-alias
 # rm
 alias rm='rm -i'
 # grep
-abbrev-alias G='| grep'
+abbrev-alias -ge G='| grep'
 # git
 abbrev-alias g='git'
 abbrev-alias ga='git add'
@@ -21,14 +21,18 @@ abbrev-alias gp='git push'
 abbrev-alias gs='git status'
 abbrev-alias gst='git status'
 abbrev-alias gt="git log --graph --pretty=format:'%x09%C(auto) %h %Cgreen %ar %Creset%x09by \"%C(cyan ul)%an%Creset\" %x09%C(auto)%s %d'"
-abbrev-alias B='$(git symbolic-ref --short HEAD 2> /dev/null)'
+abbrev-alias -ge B='$(git symbolic-ref --short HEAD 2> /dev/null)'
 
 
 ###################
 ## OSX
 ###################
 if [[ $(uname) = "Darwin" ]]; then
-
+    # cd
+    abbrev-alias d='cd ~/Desktop'
+    # docker
+    abbrev-alias dimg='docker image'
+    abbrev-alias dcnt='docker container'
 fi
 
 ###################
