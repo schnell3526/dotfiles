@@ -40,8 +40,8 @@ setopt hist_ignore_dups
 
 
 # ローカル設定ファイル
-if [ -f ~/dotfiles/zsh/private.zsh ];then
-    source ~/dotfiles/zsh/private.zsh
+if [ -f ~/dotfiles/zsh/local.zsh ];then
+    source ~/dotfiles/zsh/local.zsh
 fi
 # エイリアス設定ファイル
 if [ -f ~/dotfiles/zsh/alias.zsh ];then

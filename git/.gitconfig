@@ -1,5 +1,4 @@
 [include]
-    path = ~/dotfiles/git/private.gitconfig
-
+    path = ~/dotfiles/git/local.gitconfig
 [init]
 	defaultBranch = main
