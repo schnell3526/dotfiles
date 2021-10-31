@@ -17,4 +17,11 @@ if [[ ${HOSTNAME} =~ abci ]]; then
     module load python/3.8/3.8.7
     module load julia/1.5
     module load singularitypro/3.7
+elif [[ $(uname) = "Darwin" ]]; then # OSX
+    # 環境変数
+    export LANG=ja_JP.UTF-8
+    export KCODE=u           # KCODEにUTF-8を設定
+    export PATH="/usr/local/bin:$PATH"
+    # go
+    export PATH="/usr/local/opt/go@1.16/bin:$PATH"
 fi

@@ -4,6 +4,10 @@ zinit load momo-lab/zsh-abbrev-alias
 ###################
 ## 共通設定
 ###################
+# ls
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -CF'
 # rm
 alias rm='rm -i'
 # grep
@@ -28,6 +32,8 @@ abbrev-alias -ge B='$(git symbolic-ref --short HEAD 2> /dev/null)'
 ## OSX
 ###################
 if [[ $(uname) = "Darwin" ]]; then
+    # ls
+    alias ls='ls -G'
     # cd
     abbrev-alias d='cd ~/Desktop'
     # docker
