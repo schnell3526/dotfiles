@@ -11,4 +11,10 @@ if [[ ${HOSTNAME} =~ abci ]]; then
     export PKG_CONFIG_PATH=${LOCAL_PATH}/lib/pkgconfig:$PKG_CONFIG_PATH
     # .localにパスを通す
     export PATH=${LOCAL_PATH}/bin:$PATH
+
+    # よく使うモジュールをロード
+    module load gcc/9.3.0
+    module load python/3.8/3.8.7
+    module load julia/1.5
+    module load singularitypro/3.7
 fi
