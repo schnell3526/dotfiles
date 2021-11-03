@@ -47,5 +47,4 @@ fi
 if [[ ${HOSTNAME} =~ abci ]]; then
     abbrev-alias d='cd ${DIR_GROUP}/ito'
     abbrev-alias q='qsub -g ${ID_GROUP} -m abe'
-    alias jumanpp='${DIR_GROUP}/share/usr/bin/jumanpp'
 fi

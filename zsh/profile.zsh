@@ -1,7 +1,5 @@
-###################
-## ABCI
-###################
 if [[ ${HOSTNAME} =~ abci ]]; then
+# ABCI用の設定
     # local設定用path
     LOCAL_PATH=${HOME}/.local
     # ncurses
@@ -11,6 +9,8 @@ if [[ ${HOSTNAME} =~ abci ]]; then
     export PKG_CONFIG_PATH=${LOCAL_PATH}/lib/pkgconfig:$PKG_CONFIG_PATH
     # .localにパスを通す
     export PATH=${LOCAL_PATH}/bin:$PATH
+    # 共有フォルダにパスを通す
+    export PATH=${DIR_GROUP}/share/usr/bin:$PATH
 
     # よく使うモジュールをロード
     module load gcc/9.3.0
