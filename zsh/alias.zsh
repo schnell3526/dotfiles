@@ -26,6 +26,8 @@ abbrev-alias gs='git status'
 abbrev-alias gst='git status'
 abbrev-alias gt="git log --graph --pretty=format:'%x09%C(auto) %h %Cgreen %ar %Creset%x09by \"%C(cyan ul)%an%Creset\" %x09%C(auto)%s %d'"
 abbrev-alias -ge B='$(git symbolic-ref --short HEAD 2> /dev/null)'
+# コンパイルコマンド
+abbrev-alias gpp='g++ -std=c++11'
 
 
 ###################
