@@ -38,6 +38,7 @@ if [[ $(uname) = "Darwin" ]]; then
     alias ls='ls -G'
     # cd
     abbrev-alias d='cd ~/Desktop'
+    abbrev-alias klab='cd ~/lab'
     # docker
     abbrev-alias dimg='docker image'
     abbrev-alias dcnt='docker container'
