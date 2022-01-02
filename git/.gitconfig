@@ -1,4 +1,7 @@
 [include]
     path = ~/dotfiles/git/local.gitconfig
+[core]
+    quotepath = false
 [init]
-	defaultBranch = main
+    defaultBranch = main
+
