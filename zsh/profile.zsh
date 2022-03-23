@@ -25,4 +25,7 @@ elif [[ $(uname) = "Darwin" ]]; then # OSX
     export PATH="/Users/schnell/nlp/bin:$PATH"
     # go
     export PATH="/usr/local/opt/go@1.16/bin:$PATH"
+elif [[ $(uname) = "Linux" ]]; then # 研GPU
+    export PATH="/home/share/bin:$PATH"
+    export LANG=ja_JP.UTF-8
 fi

@@ -43,6 +43,9 @@ if [[ $(uname) = "Darwin" ]]; then
     abbrev-alias dimg='docker image'
     abbrev-alias dcnt='docker container'
 fi
+if [[ $(uname) = "Linux" ]]; then
+    alias ls='ls --color'
+fi
 
 ###################
 ## ABCI
