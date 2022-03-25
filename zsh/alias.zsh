@@ -28,7 +28,8 @@ abbrev-alias gt="git log --graph --pretty=format:'%x09%C(auto) %h %Cgreen %ar %C
 abbrev-alias -ge B='$(git symbolic-ref --short HEAD 2> /dev/null)'
 # コンパイルコマンド
 abbrev-alias gpp='g++ -std=c++11'
-
+# vimrc
+abbrev-alias vrc='vi ~/.vimrc'
 
 ###################
 ## OSX
