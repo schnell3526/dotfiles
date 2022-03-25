@@ -57,3 +57,4 @@ if [ -f ~/dotfiles/zsh/profile.zsh ];then
     source ~/dotfiles/zsh/profile.zsh
 fi
 
+POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
