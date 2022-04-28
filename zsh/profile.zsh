@@ -29,4 +29,5 @@ elif [[ $(uname) = "Darwin" ]]; then # OSX
 elif [[ $(uname) = "Linux" ]]; then # 研GPU
     export PATH="/home/share/bin:$PATH"
     export LANG=ja_JP.UTF-8
+    export PATH="$HOME/usr/bin:$PATH"
 fi
