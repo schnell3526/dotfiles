@@ -36,7 +36,7 @@ abbrev-alias vrc='vi ~/.vimrc'
 ###################
 if [[ $(uname) = "Darwin" ]]; then
     # ls
-    alias ls='ls -G'
+    alias ls='ls -FG'
     # cd
     abbrev-alias d='cd ~/Desktop'
     abbrev-alias klab='cd ~/lab'
