@@ -14,9 +14,7 @@ if [[ ${HOSTNAME} =~ abci ]]; then
 
     # よく使うモジュールをロード
     module load gcc/9.3.0
-    module load python/3.8/3.8.7
-    module load julia/1.5
-    module load singularitypro/3.7
+    python/3.8
 elif [[ $(uname) = "Darwin" ]]; then # OSX
     # 環境変数
     export LANG=ja_JP.UTF-8
