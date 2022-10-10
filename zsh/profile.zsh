@@ -31,4 +31,6 @@ elif [[ $(uname) = "Linux" ]]; then # 研GPU
     export PATH="/home/share/bin:$PATH"
     export LANG=ja_JP.UTF-8
     export PATH="$HOME/usr/bin:$PATH"
+    source /apps/Modules/init/zsh
+    module load gcc/11.2 cuda/11.6/11.6.2 cudnn/8.2/8.2.4
 fi
