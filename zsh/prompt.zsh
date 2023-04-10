@@ -1,5 +1,9 @@
 # プロンプトの設定
 
+mkcd () {
+    mkdir -p "$1"
+    cd "$1"
+}
 if [[ ${HOSTNAME} =~ abci ]]; then # ABCI
     # 左プロンプトの表示設定
     POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(host dir vcs newline virtualenv)
