@@ -5,6 +5,7 @@ on: push
 jobs:
     docker_test:
         runs-on: ubuntu-22.04
+        container: ubuntu:latest
         steps:
             - uses: actions/checkout@v1
             - name: Install required packages
