@@ -6,5 +6,6 @@ jobs:
     docker_test:
         runs-on: ubuntu-22.04
         steps:
+            - uses: actions/checkout@v1
             - name: print hello world
               run: echo `ls`
