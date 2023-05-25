@@ -7,6 +7,4 @@ jobs:
         runs-on: ubuntu-22.04
         steps:
             - name: print hello world
-              run: |
-                pwd
-                ls
+              run: ls
