@@ -4,8 +4,7 @@ on: push
 
 jobs:
     docker_test:
-        runs-on: ubuntu-latest
+        runs-on: ubuntu-22.04
         steps:
             - name: print hello world
-              run: |
-                echo helloworld
+              run: source setup.sh
