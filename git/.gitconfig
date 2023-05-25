@@ -1,6 +1,6 @@
 [include]
     path = ~/dotfiles/git/local.gitconfig
-	path = ~/dotfile/git/.gitconfig.secret
+	path = ~/dotfiles/git/.gitconfig.secret
 [core]
     quotepath = false
 [init]

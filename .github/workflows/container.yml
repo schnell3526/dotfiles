@@ -1,0 +1,11 @@
+name: コンテナテスト
+
+on: push
+
+jobs:
+    docker_test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: print hello world
+              run: |
+                echo $HOSTNAME
