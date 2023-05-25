@@ -8,4 +8,4 @@ jobs:
         steps:
             - name: print hello world
               run: |
-                echo $HOSTNAME
+                echo helloworld
