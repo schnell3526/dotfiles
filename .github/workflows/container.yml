@@ -7,5 +7,7 @@ jobs:
         runs-on: ubuntu-22.04
         steps:
             - uses: actions/checkout@v1
-            - name: print hello world
-              run: echo `ls`
+            - name: Install required packages
+              run: apt-get update && apt-get install -y sudo zsh
+            - name: Install dotfiles
+              run: source setup.sh
