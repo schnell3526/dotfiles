@@ -32,7 +32,7 @@ abbrev-alias gpp='g++ -std=c++11'
 abbrev-alias vrc='vi ~/.vimrc'
 
 ###################
-## OSX
+## OSX用の設定
 ###################
 if [[ $(uname) = "Darwin" ]]; then
     # ls
@@ -43,6 +43,8 @@ if [[ $(uname) = "Darwin" ]]; then
     # docker
     abbrev-alias dimg='docker image'
     abbrev-alias dcnt='docker container'
+    # terraform
+    abbrev-alias tf='terraform'
 fi
 if [[ $(uname) = "Linux" ]]; then
     alias ls='ls --color'
