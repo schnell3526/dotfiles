@@ -17,7 +17,7 @@ if [[ ${HOSTNAME} =~ abci ]]; then
     export PATH=${DIR_GROUP}/share/usr/bin:$PATH
 
     # よく使うモジュールをロード
-    module load gcc/9.3.0 python/3.8
+    module load gcc/12.2.0 python/3.11 cuda/12.0 cudnn/8.8
 elif [[ $(uname) = "Darwin" ]]; then # OSX
     # 環境変数
     export LANG=ja_JP.UTF-8
