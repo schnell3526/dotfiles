@@ -1,0 +1,11 @@
+name: Lint
+
+on: push
+
+jobs:
+  yamllint:
+    runs-on: ubuntu-24.04
+    steps:
+    - uses: actions/checkout@v4
+    - name: yamllint
+      run: pipx run yamllint --strict .
