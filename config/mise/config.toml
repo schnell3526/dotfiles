@@ -18,6 +18,18 @@ gh = "latest"
 kind = "latest"
 kubectl = "latest"
 uv = "latest"
+yq = "latest"
+task = "latest"
+cmake = "latest"
+
+# AWS
+awscli = { version = "latest", symlink_bins = "true" }
+aws-vault = "latest"
+
+# Kubernetes / IaC
+helm = "latest"
+k9s = "latest"
+terraform = "1.14"
 
 # runtime
 node = "latest"
