@@ -37,8 +37,6 @@ mas "Pages", id: 409201541
 
 # VSCode 拡張
 vscode "anthropic.claude-code"
-vscode "github.copilot"
-vscode "github.copilot-chat"
 vscode "hashicorp.terraform"
 vscode "ms-azuretools.vscode-containers"
 vscode "ms-azuretools.vscode-docker"
