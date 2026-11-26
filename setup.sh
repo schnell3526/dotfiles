@@ -24,6 +24,22 @@ link config/starship.toml      "$CONFIG/starship.toml"
 link config/sheldon/plugins.toml "$CONFIG/sheldon/plugins.toml"
 link config/atuin/config.toml  "$CONFIG/atuin/config.toml"
 link config/mise/config.toml   "$CONFIG/mise/config.toml"
+link claude/settings.json      "$HOME/.claude/settings.json"
+link claude/CLAUDE.md          "$HOME/.claude/CLAUDE.md"
+
+# Claude Code のグローバル skill は 1 つずつリンクする
+# （~/.claude/skills/synced は claude.ai から同期されるディレクトリなので、skills ごとリンクはしない）
+for skill in "$DOTFILES"/claude/skills/*/; do
+    [[ -d "$skill" ]] || continue
+    link "claude/skills/$(basename "$skill")" "$HOME/.claude/skills/$(basename "$skill")"
+done
+# dotfiles から消した skill のリンクを掃除
+for dst in "$HOME"/.claude/skills/*; do
+    if [[ -L "$dst" && ! -e "$dst" && "$(readlink "$dst")" == "$DOTFILES/claude/skills/"* ]]; then
+        rm "$dst"
+        echo "unlink: $dst"
+    fi
+done
 
 if [[ "${1:-}" != "--no-brew" ]] && command -v brew >/dev/null 2>&1; then
     brew bundle --file="$DOTFILES/Brewfile"
