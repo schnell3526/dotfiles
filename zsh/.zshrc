@@ -19,19 +19,23 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*:git-checkout:*' sort false
 zstyle ':fzf-tab:*' switch-group '<' '>'
 [[ -n $HOMEBREW_PREFIX ]] && fpath=("$HOMEBREW_PREFIX/share/zsh/site-functions" $fpath)
+# mise 管理ツールの補完（zsh/gen-completions.zsh で生成）
+fpath=("${XDG_DATA_HOME:-$HOME/.local/share}/zsh/completions" $fpath)
 
 # ---------------------------------------------------------------
 # プラグイン（~/.config/sheldon/plugins.toml）
 #   zsh-completions → compinit → fzf-tab → autosuggestions → syntax-highlighting
 # ---------------------------------------------------------------
+# mise を最初に有効化する（sheldon / starship などの CLI は mise 管理: ~/.config/mise/config.toml）
+eval "$(mise activate zsh)"
+
 export ABBR_USER_ABBREVIATIONS_FILE=~/dotfiles/zsh/abbreviations
 eval "$(sheldon source)"
 
 # ---------------------------------------------------------------
 # ツール
 # ---------------------------------------------------------------
-eval "$(mise activate zsh)"                 # node / python / go などのバージョン管理
-eval "$(zoxide init zsh)"                   # z <dir>
+eval "$(zoxide init zsh)"                 # z <dir>
 source <(fzf --zsh)                         # Ctrl-T: ファイル, Alt-C: cd
 eval "$(atuin init zsh --disable-up-arrow)" # Ctrl-R: 履歴検索（↑キーは通常動作）
 eval "$(starship init zsh)"                 # プロンプト（~/.config/starship.toml）

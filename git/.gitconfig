@@ -10,12 +10,13 @@
 [credential]
 	helper = osxkeychain
 # GitHub は gh のトークンを使う（gh auth login 済みが前提）
+# gh は mise 管理。GUI アプリなど mise 未有効の環境からも動くよう shim を直接指す
 [credential "https://github.com"]
 	helper =
-	helper = !gh auth git-credential
+	helper = !\"$HOME/.local/share/mise/shims/gh\" auth git-credential
 [credential "https://gist.github.com"]
 	helper =
-	helper = !gh auth git-credential
+	helper = !\"$HOME/.local/share/mise/shims/gh\" auth git-credential
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
