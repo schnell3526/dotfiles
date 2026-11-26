@@ -24,6 +24,7 @@ link config/starship.toml      "$CONFIG/starship.toml"
 link config/sheldon/plugins.toml "$CONFIG/sheldon/plugins.toml"
 link config/atuin/config.toml  "$CONFIG/atuin/config.toml"
 link config/mise/config.toml   "$CONFIG/mise/config.toml"
+link aws/config                "$HOME/.aws/config"
 link claude/settings.json      "$HOME/.claude/settings.json"
 link claude/CLAUDE.md          "$HOME/.claude/CLAUDE.md"
 

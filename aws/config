@@ -1,0 +1,37 @@
+# AWS CLI 設定の雛形 (~/.aws/config にリンクされる)
+# 実際のアカウント ID などは入れず、プレースホルダを自分の環境に置き換えて使う。
+# 認証情報 (~/.aws/credentials) は dotfiles では管理しない。SSO を使うこと。
+#
+# 使い方:
+#   aws sso login --sso-session my-sso
+#   aws sts get-caller-identity --profile dev
+#   export AWS_PROFILE=dev
+
+[default]
+region = ap-northeast-1
+output = json
+
+# --- SSO セッション (複数 profile で共有) ---
+[sso-session my-sso]
+sso_start_url = https://YOUR_SUBDOMAIN.awsapps.com/start
+sso_region = ap-northeast-1
+sso_registration_scopes = sso:account:access
+
+# --- profile ---
+[profile dev]
+sso_session = my-sso
+sso_account_id = 000000000000
+sso_role_name = AdministratorAccess
+region = ap-northeast-1
+
+[profile prod]
+sso_session = my-sso
+sso_account_id = 111111111111
+sso_role_name = ReadOnlyAccess
+region = ap-northeast-1
+
+# --- AssumeRole の例 (dev から別アカウントのロールへ) ---
+# [profile assume-example]
+# role_arn = arn:aws:iam::222222222222:role/YourRole
+# source_profile = dev
+# region = ap-northeast-1
