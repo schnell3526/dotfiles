@@ -3,5 +3,12 @@
   "extends": ["config:recommended"],
   "mise": {
     "managerFilePatterns": ["/^config/mise/config\\.toml$/"]
-  }
+  },
+  "packageRules": [
+    {
+      "description": "minor / patch / digest 更新は CI が通れば自動マージ（major は手動）",
+      "matchUpdateTypes": ["minor", "patch", "digest", "pin", "pinDigest"],
+      "automerge": true
+    }
+  ]
 }
