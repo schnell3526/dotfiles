@@ -22,6 +22,7 @@ git clone https://github.com/schnell3526/dotfiles ~/dotfiles
 | `config/starship.toml` | プロンプト |
 | `config/atuin/config.toml` | 履歴検索（Ctrl-R）。同期なし |
 | `config/mise/config.toml` | CLI ツールと言語ランタイム（mise で管理） |
+| `claude/skills/<名前>/SKILL.md` | Claude Code のグローバル skill。`~/.claude/skills/<名前>` にリンクされる |
 | `Brewfile` | mise 自体・git・フォントなど mise で入れられないもの |
 | `~/.zshrc.local` | マシン固有の設定（リポジトリ管理外） |
 
@@ -32,3 +33,4 @@ git clone https://github.com/schnell3526/dotfiles ~/dotfiles
 - `mise use -g node@lts`: ツール / ランタイムの追加（`config/mise/config.toml` に追記される）
 - `mise upgrade`: mise 管理のツールを更新（ツールを追加・更新したら `zsh ~/dotfiles/zsh/gen-completions.zsh` で補完を再生成）
 - `sheldon lock --update`: プラグイン更新
+- skill の追加: `~/dotfiles/claude/skills/<名前>/SKILL.md` を作って `./setup.sh --no-brew`（`~/.claude/skills` に直接作ったものは管理されないので、`mv` で dotfiles に移してから setup を流す）
