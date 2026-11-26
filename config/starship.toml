@@ -1,0 +1,42 @@
+"$schema" = "https://starship.rs/config-schema.json"
+
+# p10k の lean スタイルに近い 2 行プロンプト
+add_newline = true
+format = """
+$directory$git_branch$git_status$git_state$python$nodejs$golang$rust$aws$kubernetes
+$character"""
+right_format = "$cmd_duration$status$jobs$time"
+
+[directory]
+truncation_length = 4
+truncate_to_repo = false
+style = "bold cyan"
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+
+[git_status]
+format = '([$all_status$ahead_behind]($style) )'
+
+[python]
+format = '[${symbol}${version}( \($virtualenv\))]($style) '
+
+[nodejs]
+format = '[$symbol$version]($style) '
+
+[cmd_duration]
+min_time = 3000
+format = "[$duration]($style) "
+
+[status]
+disabled = false
+format = "[✘ $status]($style) "
+
+[time]
+disabled = false
+format = "[$time]($style)"
+time_format = "%H:%M:%S"
+style = "dimmed white"
+
+[kubernetes]
+disabled = false

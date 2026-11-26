@@ -1,0 +1,28 @@
+# sheldon: https://sheldon.cli.rs
+# 読み込み順に意味があるので並び替えないこと
+shell = "zsh"
+
+[plugins.zsh-completions]
+github = "zsh-users/zsh-completions"
+dir = "src"
+apply = ["fpath"]
+
+[plugins.compinit]
+# .zcompdump が 24 時間以内なら再チェックを省略（起動高速化）
+inline = '''
+autoload -Uz compinit
+if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qN.mh+24) ]]; then compinit; else compinit -C; fi
+'''
+
+# fzf-tab は compinit の後、autosuggestions / syntax-highlighting の前
+[plugins.fzf-tab]
+github = "Aloxaf/fzf-tab"
+
+[plugins.zsh-abbr]
+github = "olets/zsh-abbr"
+
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+
+[plugins.fast-syntax-highlighting]
+github = "zdharma-continuum/fast-syntax-highlighting"
