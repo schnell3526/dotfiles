@@ -1,0 +1,17 @@
+# mise グローバル設定: https://mise.jdx.dev/configuration.html
+# CLI ツールもここで管理する（brew は mise 自体・GUI アプリ・mise にないものだけ）
+
+[tools]
+# shell
+# sheldon は配布バイナリが Homebrew の openssl@3 に依存して動かないため Brewfile で管理
+starship = "latest"
+atuin = "latest"
+
+# CLI
+fzf = "latest"
+zoxide = "latest"
+eza = "latest"
+bat = "latest"
+fd = "latest"
+ripgrep = "latest"
+gh = "latest"

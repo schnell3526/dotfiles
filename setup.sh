@@ -23,9 +23,16 @@ link vim/.vimrc                "$HOME/.vimrc"
 link config/starship.toml      "$CONFIG/starship.toml"
 link config/sheldon/plugins.toml "$CONFIG/sheldon/plugins.toml"
 link config/atuin/config.toml  "$CONFIG/atuin/config.toml"
+link config/mise/config.toml   "$CONFIG/mise/config.toml"
 
 if [[ "${1:-}" != "--no-brew" ]] && command -v brew >/dev/null 2>&1; then
     brew bundle --file="$DOTFILES/Brewfile"
+fi
+
+# CLI ツール（starship / fzf など）は mise で入れる
+if command -v mise >/dev/null 2>&1; then
+    mise install
+    command -v zsh >/dev/null 2>&1 && zsh "$DOTFILES/zsh/gen-completions.zsh"
 fi
 
 if command -v sheldon >/dev/null 2>&1; then
