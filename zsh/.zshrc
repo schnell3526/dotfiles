@@ -54,6 +54,44 @@ alias cat='bat --paging=never'
 alias rm='rm -i'
 
 mkcd() { mkdir -p "$1" && cd "$1" }
+alias k9s='LANG=en_US.UTF-8 k9s'  # k9s の文字化け対策
+# git のユーザーを個人アカウントに変更する
+alias git-personal='git config user.name "schnell3526" && git config user.email "schnelldickheiter@gmail.com"'
+# docker で作ったコマンド（$(pwd) は実行時に評価する）
+alias c-cutter='docker run -it -v "$(pwd)":/app --rm docker-cookiecutter'
+
+# git log を幅で切り詰めて表示（abbr の gl で展開）。usage: git_smart_log [幅] [git log の引数...]
+git_smart_log() {
+    local default_width=120  # デフォルト値を設定
+    local width=$default_width
+    if [[ $# -gt 0 && "$1" =~ ^[0-9]+$ ]]; then
+        width=$1
+        shift
+    fi
+    git log --graph --color=always \
+        --format=format:'%C(auto)%h%d %C(green)%ar%Creset by"%C(cyan ul)%an%Creset" %s' \
+        "$@" |
+    perl -e "
+        use Term::ANSIColor qw(colorstrip);
+        my \$width = $width;
+        while (<>) {
+            my \$stripped = colorstrip(\$_);
+            if (length(\$stripped) > \$width) {
+                my \$visible_len = 0;
+                my \$truncated = '';
+                while (\$visible_len < \$width - 3) {
+                    if (\$_ =~ /\\G(?:\\e\\[[0-9;]*m)*([^\\e]|\\e\\[[0-9;]*m)/gc) {
+                        \$truncated .= \$&;
+                        \$visible_len++ if \$1 ne '' and \$1 !~ /\\e/;
+                    }
+                }
+                \$_ = \$truncated . \"...\\n\";
+            }
+            print \$_;
+        }
+    " |
+    less -RFX
+}
 
 # マシン固有の設定（PATH 追加など、リポジトリに入れないもの）
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
