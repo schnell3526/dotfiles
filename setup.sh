@@ -24,6 +24,11 @@ link config/starship.toml      "$CONFIG/starship.toml"
 link config/sheldon/plugins.toml "$CONFIG/sheldon/plugins.toml"
 link config/atuin/config.toml  "$CONFIG/atuin/config.toml"
 link config/mise/config.toml   "$CONFIG/mise/config.toml"
+# aws/config は機微情報を含むため gitignore。無ければ example からコピーする
+if [[ ! -e "$DOTFILES/aws/config" ]]; then
+    cp "$DOTFILES/aws/config.example" "$DOTFILES/aws/config"
+    echo "copy: aws/config.example -> aws/config (値を自分の環境に書き換えること)"
+fi
 link aws/config                "$HOME/.aws/config"
 link claude/settings.json      "$HOME/.claude/settings.json"
 link claude/CLAUDE.md          "$HOME/.claude/CLAUDE.md"

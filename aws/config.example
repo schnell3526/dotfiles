@@ -1,5 +1,6 @@
-# AWS CLI 設定の雛形 (~/.aws/config にリンクされる)
-# 実際のアカウント ID などは入れず、プレースホルダを自分の環境に置き換えて使う。
+# AWS CLI 設定の雛形。setup.sh が aws/config (gitignore 済み) にコピーし、
+# それを ~/.aws/config にリンクする。実際の値は aws/config 側に書くこと。
+# この example にはアカウント ID などの実値を入れない。
 # 認証情報 (~/.aws/credentials) は dotfiles では管理しない。SSO を使うこと。
 #
 # 使い方:
