@@ -22,8 +22,11 @@ git clone https://github.com/schnell3526/dotfiles ~/dotfiles
 | `config/starship.toml` | プロンプト |
 | `config/atuin/config.toml` | 履歴検索（Ctrl-R）。同期なし |
 | `config/mise/config.toml` | CLI ツールと言語ランタイム（mise で管理） |
+| `claude/settings.json` | Claude Code のユーザー設定（`~/.claude/settings.json`） |
+| `claude/CLAUDE.md` | Claude Code のグローバル指示（`~/.claude/CLAUDE.md`） |
 | `claude/skills/<名前>/SKILL.md` | Claude Code のグローバル skill。`~/.claude/skills/<名前>` にリンクされる |
 | `Brewfile` | mise 自体・git・フォントなど mise で入れられないもの |
+| `~/.claude/settings.local.json` | マシン固有の Claude Code 設定（リポジトリ管理外） |
 | `~/.zshrc.local` | マシン固有の設定（リポジトリ管理外） |
 
 ## よく使う操作
