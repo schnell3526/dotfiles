@@ -15,3 +15,9 @@ bat = "latest"
 fd = "latest"
 ripgrep = "latest"
 gh = "latest"
+kind = "latest"
+kubectl = "latest"
+uv = "latest"
+
+# runtime
+node = "latest"

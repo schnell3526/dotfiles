@@ -6,6 +6,9 @@ setopt print_eight_bit      # 日本語ファイル名を表示
 setopt auto_cd              # ディレクトリ名だけで cd
 setopt interactive_comments # 対話シェルでも # コメントを使える
 setopt extended_glob        # 拡張 glob（compinit のキャッシュ判定でも使用）
+# emacs キーバインド。fzf / atuin などがキーを登録する前に選ぶ
+# （EDITOR=vim だと既定が viins になり、後から切り替えると登録したキーが消える）
+bindkey -e
 
 # 履歴（検索は atuin が担当、こちらは zsh 側のファイル）
 HISTFILE=~/.zsh_history

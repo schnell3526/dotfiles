@@ -1,4 +1,26 @@
 {
   "theme": "dark",
-  "model": "sonnet"
+  "model": "sonnet",
+  "cleanupPeriodDays": 30,
+  "env": {
+    "LANG": "ja_JP.UTF-8"
+  },
+  "includeCoAuthoredBy": true,
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Write(*)"
+    ],
+    "deny": [
+      "Read(**/*.env)",
+      "Bash(cat **/*.env)"
+    ],
+    "tool_computer_use": false,
+    "tool_fs_write": true,
+    "tool_fs_read": true,
+    "tool_bash": true,
+    "tool_web_search": true
+  },
+  "alwaysThinkingEnabled": true
 }

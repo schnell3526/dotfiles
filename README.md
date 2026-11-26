@@ -16,6 +16,7 @@ git clone https://github.com/schnell3526/dotfiles ~/dotfiles
 | ファイル | 内容 |
 |---|---|
 | `zsh/.zshrc` | 本体。履歴・補完設定と各ツールの init |
+| `zsh/.zprofile` | ログインシェル。Homebrew の PATH（`brew shellenv`） |
 | `zsh/gen-completions.zsh` | mise 管理ツールの zsh 補完を生成 |
 | `zsh/abbreviations` | [zsh-abbr](https://zsh-abbr.olets.dev) の略語（`g` → `git` など、スペースで展開） |
 | `config/sheldon/plugins.toml` | zsh プラグイン（completions / fzf-tab / autosuggestions / fast-syntax-highlighting） |
@@ -25,7 +26,9 @@ git clone https://github.com/schnell3526/dotfiles ~/dotfiles
 | `claude/settings.json` | Claude Code のユーザー設定（`~/.claude/settings.json`） |
 | `claude/CLAUDE.md` | Claude Code のグローバル指示（`~/.claude/CLAUDE.md`） |
 | `claude/skills/<名前>/SKILL.md` | Claude Code のグローバル skill。`~/.claude/skills/<名前>` にリンクされる |
-| `Brewfile` | mise 自体・git・フォントなど mise で入れられないもの |
+| `ghostty/config` | Ghostty（`~/Library/Application Support/com.mitchellh.ghostty/config`） |
+| `vscode/{settings,keybindings}.json` | VSCode のユーザー設定（VSCode 未インストールならスキップ） |
+| `Brewfile` | mise 自体・git・フォント・GUI アプリ・App Store アプリ・VSCode 拡張など mise で入れられないもの |
 | `~/.claude/settings.local.json` | マシン固有の Claude Code 設定（リポジトリ管理外） |
 | `~/.zshrc.local` | マシン固有の設定（リポジトリ管理外） |
 
