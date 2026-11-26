@@ -21,6 +21,7 @@ uv = "latest"
 yq = "latest"
 task = "latest"
 cmake = "latest"
+"pypi:yamllint" = "latest"  # .yamllint.yml
 
 # AWS
 awscli = { version = "latest", symlink_bins = "true" }

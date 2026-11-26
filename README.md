@@ -28,6 +28,7 @@ git clone https://github.com/schnell3526/dotfiles ~/dotfiles
 | `claude/skills/<名前>/SKILL.md` | Claude Code のグローバル skill。`~/.claude/skills/<名前>` にリンクされる |
 | `ghostty/config` | Ghostty（`~/Library/Application Support/com.mitchellh.ghostty/config`） |
 | `vscode/{settings,keybindings}.json` | VSCode のユーザー設定（VSCode 未インストールならスキップ） |
+| `.yamllint.yml` | YAML の lint 設定（2 スペース、`-` は字下げしない）。`yamllint --strict .` で確認、CI でも実行 |
 | `Brewfile` | mise 自体・git・フォント・GUI アプリ・App Store アプリ・VSCode 拡張など mise で入れられないもの |
 | `~/.claude/settings.local.json` | マシン固有の Claude Code 設定（リポジトリ管理外） |
 | `~/.zshrc.local` | マシン固有の設定（リポジトリ管理外） |

@@ -1,0 +1,15 @@
+# yamllint 設定: https://yamllint.readthedocs.io/en/stable/configuration.html
+extends: default
+
+rules:
+  # インデントは 2 スペース、シーケンスの "-" は親キーと同じ位置（字下げしない）
+  indentation:
+    spaces: 2
+    indent-sequences: false
+  # GitHub Actions の `on:` キーを真偽値と誤検知しないようにする
+  truthy:
+    check-keys: false
+  # 先頭の `---` は必須にしない
+  document-start: disable
+  line-length:
+    max: 120

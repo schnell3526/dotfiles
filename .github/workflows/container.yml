@@ -3,14 +3,14 @@ name: コンテナテスト
 on: push
 
 jobs:
-    docker_test:
-        runs-on: ubuntu-24.04
-        container: ubuntu:latest
-        steps:
-            - uses: actions/checkout@v4
-            - name: Install required packages
-              run: apt-get update && apt-get install -y zsh
-            - name: Install dotfiles
-              run: ./setup.sh --no-brew
-            - name: Syntax check
-              run: zsh -n zsh/.zshrc
+  docker_test:
+    runs-on: ubuntu-24.04
+    container: ubuntu:latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install required packages
+      run: apt-get update && apt-get install -y zsh
+    - name: Install dotfiles
+      run: ./setup.sh --no-brew
+    - name: Syntax check
+      run: zsh -n zsh/.zshrc
