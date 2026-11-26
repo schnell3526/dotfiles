@@ -18,6 +18,7 @@ link() {
 }
 
 link zsh/.zshrc                "$HOME/.zshrc"
+link zsh/.zprofile             "$HOME/.zprofile"
 link git/.gitconfig            "$HOME/.gitconfig"
 link vim/.vimrc                "$HOME/.vimrc"
 link config/starship.toml      "$CONFIG/starship.toml"
@@ -32,6 +33,14 @@ fi
 link aws/config                "$HOME/.aws/config"
 link claude/settings.json      "$HOME/.claude/settings.json"
 link claude/CLAUDE.md          "$HOME/.claude/CLAUDE.md"
+link ghostty/config            "$HOME/Library/Application Support/com.mitchellh.ghostty/config"
+
+# VSCode（未インストールならスキップ）
+VSCODE_USER="$HOME/Library/Application Support/Code/User"
+if [[ -d "$VSCODE_USER" ]]; then
+    link vscode/settings.json    "$VSCODE_USER/settings.json"
+    link vscode/keybindings.json "$VSCODE_USER/keybindings.json"
+fi
 
 # Claude Code のグローバル skill は 1 つずつリンクする
 # （~/.claude/skills/synced は claude.ai から同期されるディレクトリなので、skills ごとリンクはしない）
