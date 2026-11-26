@@ -1,3 +1,5 @@
 private*
 local*
 *.secret
+# 機微情報を含むためローカルのみ (雛形は aws/config.example)
+aws/config
