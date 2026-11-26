@@ -6,8 +6,16 @@
 [init]
     defaultBranch = main
 
+# 認証情報は平文保存（store）せず、macOS キーチェーンに保存
 [credential]
-	helper = store
+	helper = osxkeychain
+# GitHub は gh のトークンを使う（gh auth login 済みが前提）
+[credential "https://github.com"]
+	helper =
+	helper = !gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !gh auth git-credential
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
