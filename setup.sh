@@ -34,6 +34,9 @@ link aws/config                "$HOME/.aws/config"
 link claude/settings.json      "$HOME/.claude/settings.json"
 link claude/CLAUDE.md          "$HOME/.claude/CLAUDE.md"
 link ghostty/config            "$HOME/Library/Application Support/com.mitchellh.ghostty/config"
+# config 内の相対パスで参照するディレクトリ
+link ghostty/shaders           "$HOME/Library/Application Support/com.mitchellh.ghostty/shaders"
+link ghostty/images            "$HOME/Library/Application Support/com.mitchellh.ghostty/images"
 
 # VSCode（未インストールならスキップ）
 VSCODE_USER="$HOME/Library/Application Support/Code/User"
