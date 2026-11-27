@@ -30,7 +30,7 @@ aws-vault = "latest"
 # Kubernetes / IaC
 helm = "latest"
 k9s = "latest"
-terraform = "1.14"
+terraform = "1.17.2"
 
 # runtime
 node = "latest"
