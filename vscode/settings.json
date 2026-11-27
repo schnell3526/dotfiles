@@ -18,7 +18,7 @@
     "editor.guides.bracketPairs": true,
     // Terminal
     "terminal.integrated.fontSize": 14,
-    "terminal.integrated.fontFamily": "monospace",
+    "terminal.integrated.fontFamily": "'HackGen Console NF'",
     "terminal.integrated.defaultProfile.osx": "zsh",
     // Files
     "files.trimTrailingWhitespace": true,
